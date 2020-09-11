@@ -10,7 +10,10 @@ class _HomepageState extends State<Homepage> {
 
   void answerQuestion() {
     print('Answer Chosen!');
-    questionIndex++;
+    setState(() {
+      questionIndex++;
+    });
+
     print('INDEX  = $questionIndex');
   }
 

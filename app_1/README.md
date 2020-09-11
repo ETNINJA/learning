@@ -5,9 +5,9 @@
 ## Observations
 
 ## DART
-print (1 + 2); <br> 
+1. print (1 + 2); <br> 
 print('hello ${i+1}') <br>
-class Person { } <br>
+2. class Person { } <br>
 var p1 = Person(); <br>
 Person({String name, int age}) // named constructor <br>
 var p1 = Person('joshn', 30); <br>
@@ -15,9 +15,11 @@ Person(String name, int age) // positional constructor <br>
 can have @required or default value age=30  <br>
 Person({this.name, this.age = 30}) // short cut for constructor <br>
 var p1 = Person(name:'joshn', age:30); <br>
-() => print('Anonymus function'); <br>
+3. () => print('Anonymus function'); <br>
 onPressed: answerQuestion(), // pass a function <br>
 onPressed: answerQuestion,  // pass a pointer to the function <br>
+4. Statefull widget -> just work with a setState function <br>
+setState contains qhat trigger the rebuild in this case, the index of the list <br>
 
 
 ### Tips from the Teacher
