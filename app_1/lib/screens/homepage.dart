@@ -25,7 +25,7 @@ class Homepage extends StatelessWidget {
                 color: Colors.green[300]),
             RaisedButton(
                 child: Text('Answer2'),
-                onPressed: answerQuestion,
+                onPressed: () => print('answer 2 chosen!'),
                 color: Colors.pink[300]),
             RaisedButton(
                 child: Text('Answer3'),
