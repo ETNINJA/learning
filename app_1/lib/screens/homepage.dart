@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 
+import 'package:app_1/widgets/question.dart';
+
 class Homepage extends StatefulWidget {
   @override
   _HomepageState createState() => _HomepageState();
 }
 
 class _HomepageState extends State<Homepage> {
-  var questionIndex = 0;
+  var _questionIndex = 0;
 
-  void answerQuestion() {
+  void _answerQuestion() {
     print('Answer Chosen!');
     setState(() {
-      questionIndex++;
+      _questionIndex++;
     });
 
-    print('INDEX  = $questionIndex');
+    print('INDEX  = $_questionIndex');
   }
 
   @override
@@ -30,21 +32,20 @@ class _HomepageState extends State<Homepage> {
       ),
       body: Center(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(questions[questionIndex]), // stateless
+            Question(questions[_questionIndex]), // constructor
             RaisedButton(
                 child: Text('Answer1'),
-                onPressed: answerQuestion, // pointer
+                onPressed: _answerQuestion, // pointer
                 color: Colors.green[300]),
             RaisedButton(
                 child: Text('Answer2'),
-                onPressed: () => answerQuestion(),
+                onPressed: () => _answerQuestion(),
                 color: Colors.pink[300]),
             RaisedButton(
                 child: Text('Answer3'),
                 onPressed: () {
-                  answerQuestion();
+                  _answerQuestion();
                   print('Answer 3');
                 },
                 color: Colors.blue[300]),
