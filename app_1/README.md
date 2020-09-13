@@ -19,9 +19,13 @@ var p1 = Person(name:'joshn', age:30); <br>
 onPressed: answerQuestion(), // pass a function <br>
 onPressed: answerQuestion,  // pass a pointer to the function <br>
 4. Statefull widget -> just work with a setState function <br>
-setState contains qhat trigger the rebuild in this case, the index of the list <br>
+setState contains what trigger the rebuild in this case, the index of the list <br>
+Statefull is re-rendered when input data or local stat4e changes <br>
 5. Input data (External Data) -> receive via constructor   <br>
 Internal data ->  receive from an user of the app <br>
+6. Stateless class wil use FINAL before its atributes <br>
+FINAL ->  <br>
+CONST ->  <br>
 
 
 ### Tips from the Teacher
