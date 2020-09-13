@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:app_1/widgets/question.dart';
+import 'package:app_1/widgets/answer.dart';
 
 class Homepage extends StatefulWidget {
   @override
@@ -34,10 +35,7 @@ class _HomepageState extends State<Homepage> {
         child: Column(
           children: [
             Question(questions[_questionIndex]), // constructor
-            RaisedButton(
-                child: Text('Answer1'),
-                onPressed: _answerQuestion, // pointer
-                color: Colors.green[300]),
+            Answer(), // using the class Answer -> Raised Button
             RaisedButton(
                 child: Text('Answer2'),
                 onPressed: () => _answerQuestion(),

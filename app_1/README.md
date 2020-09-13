@@ -15,6 +15,9 @@ Person(String name, int age) // positional constructor <br>
 can have @required or default value age=30  <br>
 Person({this.name, this.age = 30}) // short cut for constructor <br>
 var p1 = Person(name:'joshn', age:30); <br>
+2. Person.veryOld(this.name){ age = 60} <br>
+var p1 = Person.veryOld( name: 'Max') <br>
+
 3. () => print('Anonymus function'); <br>
 onPressed: answerQuestion(), // pass a function <br>
 onPressed: answerQuestion,  // pass a pointer to the function <br>
@@ -26,9 +29,13 @@ Internal data ->  receive from an user of the app <br>
 6. Stateless class wil use FINAL before its atributes <br>
 FINAL ->  <br>
 CONST ->  <br>
+7. to see the code of a widget, hold Crtl and hoover over the object, than click to inspect. <br>
+### Callback Functions
+8. 
 
 
 ### Tips from the Teacher
+check Widget CATALOG <br>
 name of the project flutter_project <br>
 name of function addNumbers <br>
 By convention, use just one widget per file <br>
