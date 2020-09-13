@@ -32,6 +32,7 @@ CONST ->  <br>
 7. to see the code of a widget, hold Crtl and hoover over the object, than click to inspect. <br>
 ### Callback Functions
 8. in the constructor of Answer class, without paranteses -> a pointer <br> 
+9. the spread ... avoid nested list, take out all individual elements and place it separetly.
 
 
 ### Tips from the Teacher

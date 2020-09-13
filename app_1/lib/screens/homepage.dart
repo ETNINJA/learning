@@ -23,9 +23,22 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     var questions = [
-      'What\'s your favourite Colour?',
-      'What\'s  your favourite animal?',
-      'What\'s  your favourite sweet?',
+      // now it's a list of Maps'
+      {
+        'questionText': 'What\'s your favourite Colour?',
+        'answers': ['Black', 'Pink', 'Blue'],
+        'buttonColor': Colors.green[300],
+      },
+      {
+        'questionText': 'What\'s  your favourite animal?',
+        'answers': ['Cat', 'Dog', 'Elephant'],
+        'buttonColor': Colors.pink[300],
+      },
+      {
+        'questionText': 'What\'s  your favourite sweet?',
+        'answers': ['Brigadeiro', 'Chocolate', 'Sorvete'],
+        'buttonColor': Colors.blue[300],
+      },
     ];
     return Scaffold(
       appBar: AppBar(
@@ -34,11 +47,13 @@ class _HomepageState extends State<Homepage> {
       body: Center(
         child: Column(
           children: [
-            Question(questions[_questionIndex]), // constructor
-            Answer(_answerQuestion, Colors.green[300],
-                'Answer1'), // using the class Answer -> Raised Button
-            Answer(_answerQuestion, Colors.pink[300], 'Answer2'),
-            Answer(_answerQuestion, Colors.blue[300], 'Answer3'),
+            Question(questions[_questionIndex]['questionText']), // constructor
+            ...(questions[_questionIndex]['answers'] as List<String>).map(
+              (e) {
+                return Answer(_answerQuestion,
+                    questions[_questionIndex]['buttonColor'], e);
+              },
+            ).toList(),
           ],
         ),
       ),

@@ -11,9 +11,11 @@ class Answer extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width * 0.60,
       child: RaisedButton(
-          child: Text(textAnswer),
-          onPressed: selectHandler, //the pointer to the the callback function
-          color: colorAnswer),
+        color: colorAnswer,
+        textColor: Colors.white,
+        child: Text(textAnswer),
+        onPressed: selectHandler, //the pointer to the the callback function
+      ),
     );
   }
 }
