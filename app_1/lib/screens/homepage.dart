@@ -35,18 +35,10 @@ class _HomepageState extends State<Homepage> {
         child: Column(
           children: [
             Question(questions[_questionIndex]), // constructor
-            Answer(_answerQuestion), // using the class Answer -> Raised Button
-            RaisedButton(
-                child: Text('Answer2'),
-                onPressed: () => _answerQuestion(),
-                color: Colors.pink[300]),
-            RaisedButton(
-                child: Text('Answer3'),
-                onPressed: () {
-                  _answerQuestion();
-                  print('Answer 3');
-                },
-                color: Colors.blue[300]),
+            Answer(_answerQuestion, Colors.green[300],
+                'Answer1'), // using the class Answer -> Raised Button
+            Answer(_answerQuestion, Colors.pink[300], 'Answer2'),
+            Answer(_answerQuestion, Colors.blue[300], 'Answer3'),
           ],
         ),
       ),
