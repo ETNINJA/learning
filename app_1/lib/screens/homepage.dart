@@ -35,7 +35,7 @@ class _HomepageState extends State<Homepage> {
         child: Column(
           children: [
             Question(questions[_questionIndex]), // constructor
-            Answer(), // using the class Answer -> Raised Button
+            Answer(_answerQuestion), // using the class Answer -> Raised Button
             RaisedButton(
                 child: Text('Answer2'),
                 onPressed: () => _answerQuestion(),

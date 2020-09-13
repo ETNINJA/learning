@@ -31,7 +31,7 @@ FINAL ->  <br>
 CONST ->  <br>
 7. to see the code of a widget, hold Crtl and hoover over the object, than click to inspect. <br>
 ### Callback Functions
-8. 
+8. in the constructor of Answer class, without paranteses -> a pointer <br> 
 
 
 ### Tips from the Teacher
