@@ -33,6 +33,11 @@ CONST ->  <br>
 ### Callback Functions
 8. in the constructor of Answer class, without paranteses -> a pointer <br> 
 9. the spread ... avoid nested list, take out all individual elements and place it separetly.
+10. use constructor to pass data around.
+11. getter is a diferent fuction 
+String get resultPhrase{
+    return ....
+}
 
 
 ### Tips from the Teacher
