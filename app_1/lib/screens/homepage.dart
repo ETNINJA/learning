@@ -10,11 +10,13 @@ class Homepage extends StatefulWidget {
 
 class _HomepageState extends State<Homepage> {
   var _questionIndex = 0;
+  var _index = 0;
 
   void _answerQuestion() {
     print('Answer Chosen!');
     setState(() {
       _questionIndex++;
+      _index = 0;
     });
 
     print('INDEX  = $_questionIndex');
@@ -23,6 +25,7 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     var questions = [
+      // would set it as const but colors does not allow.
       // now it's a list of Maps'
       {
         'questionText': 'What\'s your favourite Colour?',
@@ -50,8 +53,8 @@ class _HomepageState extends State<Homepage> {
             Question(questions[_questionIndex]['questionText']), // constructor
             ...(questions[_questionIndex]['answers'] as List<String>).map(
               (e) {
-                return Answer(_answerQuestion,
-                    questions[_questionIndex]['buttonColor'], e);
+                return Answer(
+                    _answerQuestion, questions[_index++]['buttonColor'], e);
               },
             ).toList(),
           ],
