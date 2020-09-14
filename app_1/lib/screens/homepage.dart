@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:app_1/widgets/question.dart';
-import 'package:app_1/widgets/answer.dart';
+import '../widgets/quiz.dart';
 
 class Homepage extends StatefulWidget {
   @override
@@ -34,13 +33,8 @@ class _HomepageState extends State<Homepage> {
 
   void _answerQuestion() {
     _questionIndex++;
-    if (_questionIndex < questions.length) {
-      print('Answer Chosen!');
-      setState(() {
-        _index = 0;
-      });
-    }
-
+    _index = 0;
+    setState(() {});
     print('INDEX  = $_questionIndex');
   }
 
@@ -51,17 +45,13 @@ class _HomepageState extends State<Homepage> {
         title: Text('Project One'),
       ),
       body: Center(
-        child: Column(
-          children: [
-            Question(questions[_questionIndex]['questionText']), // constructor
-            ...(questions[_questionIndex]['answers'] as List<String>).map(
-              (e) {
-                return Answer(
-                    _answerQuestion, questions[_index++]['buttonColor'], e);
-              },
-            ).toList(),
-          ],
-        ),
+        child: _questionIndex < questions.length
+            ? Quiz(
+                answerQuestion: _answerQuestion,
+                questions: questions,
+                questionIndex: _questionIndex,
+                index: _index)
+            : Center(child: Text("No more Questions")),
       ),
     );
   }
