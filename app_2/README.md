@@ -1,4 +1,5 @@
 # app_2
+Expense Planner <br>
 
 
 
@@ -9,4 +10,10 @@
 
 
 ### Tips from the Teacher
+Container, Row and Colunm, are important layout widgets <br>
+Flexible and Expanded <br>
+Stack, Card <br>
+ListView, GridView, <br>
+ListTile, <br>
+GestureDetector, InkWell, <br> 
 
