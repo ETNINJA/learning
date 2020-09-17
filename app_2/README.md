@@ -8,6 +8,11 @@ Expense Planner <br>
 2. the best way to control size is with Container
 width: MediaQuery.of(context).size.width * 0.9,
 width: double.infinity,
+3. Column(
+            children: transactions
+                .map((tx) => Card( )).toList(),          
+        )
+4. 
 
 
 ## DART
