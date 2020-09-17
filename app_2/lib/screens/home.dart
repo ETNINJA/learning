@@ -1,6 +1,16 @@
 import 'package:flutter/material.dart';
 
+import '../models/transactions.dart';
+
 class Home extends StatelessWidget {
+  final List<Transactions> transactions = [
+    Transactions(
+        id: 't1', title: 'New Shoes', amount: 69.99, date: DateTime.now()),
+    Transactions(
+        id: 't2', title: 'YogaMat', amount: 9.50, date: DateTime.now()),
+    Transactions(
+        id: 't3', title: 'Dinner', amount: 63.70, date: DateTime.now()),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,20 +43,28 @@ class Home extends StatelessWidget {
               color: Theme.of(context).dividerColor,
               thickness: 6,
             ),
-            Card(
-              elevation: 5,
-              shape: Border(
-                  right: BorderSide(
-                      color: Theme.of(context).primaryColor, width: 20)),
-              child: Container(
-                padding: EdgeInsets.symmetric(vertical: 50),
-                width: double.infinity,
-                child: Text(
-                  'List of transactions',
-                  style: TextStyle(fontSize: 24),
-                  textAlign: TextAlign.center,
-                ),
-              ),
+            Column(
+              children: transactions
+                  .map((tx) => Card(
+                        elevation: 5,
+                        shape: Border(
+                            right: BorderSide(
+                                color: Theme.of(context).primaryColor,
+                                width: 20)),
+                        child: Container(
+                          padding: EdgeInsets.symmetric(vertical: 20),
+                          width: double.infinity,
+                          child: Text(
+                            tx.title,
+                            style: TextStyle(
+                              fontSize: 24,
+                              letterSpacing: 5,
+                            ),
+                            textAlign: TextAlign.justify,
+                          ),
+                        ),
+                      ))
+                  .toList(),
             )
           ],
         ));
