@@ -13,6 +13,9 @@ class Home extends StatelessWidget {
         id: 't3', title: 'Dinner', amount: 63.70, date: DateTime.now()),
   ];
 
+  String inputTitle;
+  String inputAmount;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,9 +45,7 @@ class Home extends StatelessWidget {
                 ),
               ),
             ),
-            Divider(
-              color: Theme.of(context).buttonColor,
-            ),
+
             //text input
             Card(
               elevation: 5,
@@ -55,16 +56,24 @@ class Home extends StatelessWidget {
                   children: [
                     TextField(
                       decoration: InputDecoration(labelText: 'Title'),
+                      onChanged: (value) {
+                        inputTitle = value;
+                      },
                     ),
                     TextField(
                       decoration: InputDecoration(labelText: 'Amount'),
+                      onChanged: (value) => inputAmount = value,
                     ),
                     FlatButton.icon(
                       //color: Theme.of(context).primaryColor,
                       // shape: RoundedRectangleBorder(
                       //   borderRadius: BorderRadius.circular(18.0),
                       // ),
-                      onPressed: () {},
+                      onPressed: () {
+                        //print the input values
+                        print(inputTitle);
+                        print(inputAmount);
+                      },
                       icon: Icon(
                         Icons.add,
                         color: Colors.purple,
@@ -78,9 +87,7 @@ class Home extends StatelessWidget {
                 ),
               ),
             ),
-            Divider(
-              color: Theme.of(context).accentColor,
-            ),
+
             Column(
               children: transactions
                   .map((tx) => Card(
