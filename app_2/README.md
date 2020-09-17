@@ -4,6 +4,11 @@ Expense Planner <br>
 
 
 ## Observations
+1. a Card takes the size of its child unless the size parent is define.
+2. the best way to control size is with Container
+width: MediaQuery.of(context).size.width * 0.9,
+width: double.infinity,
+
 
 ## DART
 
