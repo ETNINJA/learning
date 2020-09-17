@@ -13,8 +13,10 @@ class Home extends StatelessWidget {
         id: 't3', title: 'Dinner', amount: 63.70, date: DateTime.now()),
   ];
 
-  String inputTitle;
-  String inputAmount;
+  // String inputTitle;
+  // String inputAmount;
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -56,13 +58,15 @@ class Home extends StatelessWidget {
                   children: [
                     TextField(
                       decoration: InputDecoration(labelText: 'Title'),
-                      onChanged: (value) {
-                        inputTitle = value;
-                      },
+                      controller: titleController,
+                      // onChanged: (value) {
+                      //   inputTitle = value;
+                      // },
                     ),
                     TextField(
                       decoration: InputDecoration(labelText: 'Amount'),
-                      onChanged: (value) => inputAmount = value,
+                      controller: amountController,
+                      // onChanged: (value) => inputAmount = value,
                     ),
                     FlatButton.icon(
                       //color: Theme.of(context).primaryColor,
@@ -71,8 +75,8 @@ class Home extends StatelessWidget {
                       // ),
                       onPressed: () {
                         //print the input values
-                        print(inputTitle);
-                        print(inputAmount);
+                        print(titleController.text);
+                        print(amountController.text);
                       },
                       icon: Icon(
                         Icons.add,
