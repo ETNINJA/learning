@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class NewTransaction extends StatelessWidget {
+  final Function addTx;
+  NewTransaction(this.addTx);
+
   final titleController = TextEditingController();
   final amountController = TextEditingController();
 
@@ -34,6 +37,8 @@ class NewTransaction extends StatelessWidget {
                 //print the input values
                 print(titleController.text);
                 print(amountController.text);
+                addTx(
+                    titleController.text, double.parse(amountController.text));
               },
               icon: Icon(
                 Icons.add,
